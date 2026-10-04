@@ -13,7 +13,7 @@ edited by hand.
 
 ## How it works
 
-1. Enter a ticker (e.g. `KO`, `MSFT`, `JPM`) and your access code, then click **Fetch data**.
+1. Enter a ticker (e.g. `KO`, `MSFT`, `JPM`) and your access code, then click **Fetch data**. Automatic fetching works for US-listed tickers, for other markets, type the figures in by hand (all models still work).
 2. A serverless function (`api/data.js`) fetches the figures from Financial Modeling Prep.
    The API key stays on the server and is never visible in the page.
 3. The page fills in the input fields and calculates all models in the browser.
@@ -81,7 +81,7 @@ so you can see how much the result depends on the assumptions.
 ## Limitations
 
 - **Data is not real-time** and comes from the Financial Modeling Prep free plan.
-  Each lookup uses 6 API requests (about 250 per day on the free plan).
+  Each lookup uses 7 API requests (about 250 per day on the free plan).
   The free plan is intended for personal use; a public service needs a paid plan.
 - **EPS growth is historical**, not an analyst forecast. DCF results depend heavily on it
   and on the discount rate, which is why scenarios and a sensitivity table are included.
@@ -90,14 +90,6 @@ so you can see how much the result depends on the assumptions.
 - **Not handled yet:** REITs (EPS is not the right measure), insurers as a separate case,
   and companies with negative earnings.
 - Reported earnings can include one-off items that distort growth rates.
-
-## Roadmap
-
-- [ ] Auto-deploy from GitHub
-- [ ] ROTCE and P/TBV for banks
-- [ ] Separate treatment for REITs and insurers
-- [ ] Alternative or additional data sources (SEC EDGAR, Eulerpool)
-- [ ] Rate limiting for public use
 
 ## Disclaimer
 
